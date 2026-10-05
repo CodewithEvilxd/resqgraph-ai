@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.015em;
+}
+
+/* Headings: Crisp, high-precision neo-grotesque hierarchy */
+h1, h2, h3, h4, .font-heading, .font-display {
+  font-family: var(--font-sans);
+  letter-spacing: -0.022em;
+  font-weight: 700;
+}
+
+/* Fallback mapping for existing classes */
+.font-syne {
+  font-family: var(--font-sans);
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+.font-tactical, .font-rajdhani {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+  font-feature-settings: "tnum" 1;
+}
+
+.font-tech, .font-chakra {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+/* Telemetry & Code: JetBrains Mono for razor-sharp numbers, coordinates, and HMAC keys */
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "liga" 0, "tnum" 1, "zero" 1;
+}
+
+kbd {
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Professional card elevation with subtle edge highlight */
+.card-surface {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.03), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  border-radius: 0.75rem;
+}
+
+.card-surface-elevated {
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  border-radius: 0.875rem;
+}
+
+/* Subtle architectural dot grid pattern in light mode */
+.bg-grid-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Dark command radar pattern */
+.bg-radar-dark {
+  background-color: #0b1120;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Crisis Radar Sweep Animation */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 6s linear infinite;
+  transform-origin: 200px 175px;
+}
+
+.animate-radar-sweep-center {
+  animation: radar-sweep 4.5s linear infinite;
+  transform-origin: 200px 200px;
+}
+
+/* Operational Clean Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide Next.js dev overlay / floating N badge / issue indicator */
+nextjs-portal,
+[data-nextjs-dev-tools-button],
+[aria-label="Next.js DevTools"],
+[data-next-badge],
+div[data-nextjs-toast-wrapper],
+div[data-nextjs-toast],
+button[data-nextjs-dev-tools-button] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Custom Leaflet Tooltip, Marker & Map Container Styling */
+.leaflet-container {
+  font-family: var(--font-sans) !important;
+  background-color: #f8fafc !important;
+}
+
+/* Reset Leaflet's default white box with gray border on divIcon */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-tooltip.tactical-map-tooltip {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16) !important;
+  padding: 6px 10px !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  max-width: 260px !important;
+  pointer-events: none !important;
+}
+
+.leaflet-tooltip.tactical-map-tooltip::before {
+  border-top-color: #cbd5e1 !important;
+}
