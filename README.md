@@ -320,8 +320,9 @@ IIITD-HACK/
 ### 1. Clone & Install Dependencies
 
 ```bash
-git clone https://github.com/your-org/resqgraph-ai.git
+git clone https://github.com/CodewithEvilxd/resqgraph-ai.git
 cd resqgraph-ai
+
 
 # Install all monorepo dependencies cleanly
 pnpm install
